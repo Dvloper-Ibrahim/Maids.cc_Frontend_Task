@@ -1,0 +1,43 @@
+<div class="container-fluid mt-3">
+  <div class="container">
+    <!-- Spinner -->
+    <div
+      class="spinner-container d-flex justify-content-center align-items-center"
+      *ngIf="loading"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Spinner -->
+
+    <div
+      *ngIf="!loading"
+      class="user d-flex align-items-start gap-4 flex-column flex-md-row bg-light bg-gradient shadow-sm p-3 rounded-4"
+    >
+      <img [src]="user.avatar" class="rounded-circle mx-auto mx-md-0" />
+      <div class="user-details">
+        <p class="fs-4 mb-2">
+          <span class="fw-bold">Id :</span>
+          {{ user.id }}
+        </p>
+        <p class="fs-4 mb-2">
+          <span class="fw-bold">First name :</span>
+          {{ user.first_name }}
+        </p>
+        <p class="fs-4 mb-2">
+          <span class="fw-bold">Last name :</span>
+          {{ user.last_name }}
+        </p>
+        <p class="fs-4 mb-2">
+          <span class="fw-bold">Email address :</span>
+          {{ user.email }}
+        </p>
+      </div>
+      <a
+        [routerLink]="['users']"
+        class="btn btn-secondary align-self-end ms-auto"
+      >
+        Back to users
+      </a>
+    </div>
+  </div>
+</div>

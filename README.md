@@ -2,26 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
 
-## Development server
+## Explanation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- When you run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+- The spinner will be spinning until the response of API reaches
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- You can navigate to the user by clicking the user card to show some details.
 
-## Build
+- When you are in the home page, you can search users by typing their ids
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+If you search by "1", the coming results will be the users with isd (1, 10, 11, 12, ... and so on).
+```
 
-## Running unit tests
+- After you see the results, you can click anyone to navigate to the details of this user.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- The spinner is implemented in the home page and the user details page also.
 
-## Running end-to-end tests
+- In user details page, there is a back button that returns you to the users page.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The assignment is responsive for wide and small screens.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**_And thank you_** 😀

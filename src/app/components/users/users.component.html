@@ -1,0 +1,47 @@
+<div class="container-fluid mt-3">
+  <div class="container">
+    <!-- Spinner -->
+    <div
+      class="spinner-container d-flex justify-content-center align-items-center"
+      *ngIf="loading"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Spinner -->
+
+    <!-- User Cards -->
+    <div class="users d-flex gap-3 flex-wrap mb-3" *ngIf="!loading">
+      <a
+        [routerLink]="['/users/user', user.id]"
+        class="text-decoration-none text-dark d-flex align-items-center gap-4 bg-light bg-gradient shadow-sm p-3 rounded-4"
+        *ngFor="
+          let user of USERS
+            | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                }
+        "
+      >
+        <img [src]="user.avatar" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ user.first_name + " " + user.last_name }}
+          </h5>
+        </div>
+      </a>
+    </div>
+    <div>
+      <!-- User Cards -->
+
+      <pagination-controls
+        class="text-center"
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onDataChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+</div>
